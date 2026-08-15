@@ -1,23 +1,30 @@
 <!-- Paste this entire block into Systeme.io: Page settings > Footer code -->
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
 // Open one FAQ item at a time while retaining native, accessible <details> behavior.
-document.querySelectorAll('[data-accordion] details').forEach((item) => {
-  item.addEventListener('toggle', () => {
+document.querySelectorAll("[data-accordion] details").forEach((item) => {
+  item.addEventListener("toggle", () => {
     if (!item.open) return;
-    document.querySelectorAll('[data-accordion] details').forEach((other) => {
+
+    document.querySelectorAll("[data-accordion] details").forEach((other) => {
       if (other !== item) other.open = false;
     });
   });
 });
 
-// Set the real checkout address here (or replace #checkout in index.html).
-document.querySelectorAll('[data-checkout-link]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    if (link.getAttribute('href') === '#checkout') {
+// Replace this placeholder with the final Systeme.io checkout URL before publishing.
+document.querySelectorAll("[data-checkout-link]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#checkout" || href === "YOUR_SYSTEME_CHECKOUT_URL") {
       event.preventDefault();
-      alert('Before publishing, replace #checkout with your secure Systeme checkout URL.');
+      alert("Before publishing, replace YOUR_SYSTEME_CHECKOUT_URL with your secure Systeme.io checkout URL.");
     }
   });
 });
