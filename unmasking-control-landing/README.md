@@ -20,11 +20,12 @@ Opening `index.html` directly also works for basic review, but a local server is
 
 ## V2 assets
 
-Current project assets:
+Current project assets and public URLs:
 
-- `assets/hero-workbook-desk.png` - 16:9 hero/editorial workbook scene
-- `assets/toolkit-worksheets.png` - toolkit worksheets/detail section
-- `assets/dual-anchor-method.png` - Dual-Anchor Method still life
+- Hero: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png`
+- Toolkit: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/toolkit-worksheets.png`
+- Dual-Anchor Method: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/dual-anchor-method.png`
+- Local backups remain in `assets/hero-workbook-desk.png`, `assets/toolkit-worksheets.png`, and `assets/dual-anchor-method.png`.
 - `assets/privacy-desk.png` - generated but not used in the current page
 
 The old `hook.png` and `problem.png` files remain in `assets/` but are not used in V2.
@@ -45,13 +46,7 @@ Use the files in `systeme-io/` in numerical order:
 2. Paste `02-page-body.html` into one raw HTML/code element.
 3. Paste `03-footer-code.html` into page settings footer code.
 
-Before pasting into Systeme.io, replace these public image placeholders:
-
-- `YOUR_PUBLIC_HERO_IMAGE_URL`
-- `YOUR_PUBLIC_TOOLKIT_IMAGE_URL`
-- `YOUR_PUBLIC_DUAL_ANCHOR_IMAGE_URL`
-
-Systeme.io needs public URLs or uploaded asset URLs; local `assets/...` paths only work in the standalone version.
+The Systeme.io files already use the Cloudinary image URLs above. Replace only the checkout placeholder before publishing.
 
 ## Production QA checklist
 
@@ -59,7 +54,7 @@ Systeme.io needs public URLs or uploaded asset URLs; local `assets/...` paths on
 - No console errors
 - No horizontal overflow at 360px, 390px, 768px, 1024px, and 1440px
 - Sticky mobile CTA does not cover critical content at rest
-- Keyboard focus is visible on links, CTAs, FAQ summaries, and quick exit
+- Keyboard focus is visible on links, CTAs, and FAQ summaries
 - FAQ works with native `details/summary`
 - Checkout placeholder is fully replaced
 - Systeme.io page matches the standalone source structure

@@ -6,10 +6,12 @@ Use these files in numerical order.
 2. Add one raw HTML/code element to the page and paste `02-page-body.html`.
 3. Paste `03-footer-code.html` into the footer-code field.
 4. Replace every `YOUR_SYSTEME_CHECKOUT_URL` with the final checkout URL.
-5. Replace every public image placeholder with the corresponding uploaded/public URL:
-   - `YOUR_PUBLIC_HERO_IMAGE_URL`
-   - `YOUR_PUBLIC_TOOLKIT_IMAGE_URL`
-   - `YOUR_PUBLIC_DUAL_ANCHOR_IMAGE_URL`
+
+The image URLs are already wired to Cloudinary:
+
+- Hero: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png`
+- Toolkit / What you receive: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/toolkit-worksheets.png`
+- Dual-Anchor Method: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/dual-anchor-method.png`
 
 Do not add `<html>`, `<head>`, or `<body>` wrappers. Systeme.io provides the document shell.
 
