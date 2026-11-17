@@ -298,10 +298,11 @@ p {
 }
 
 .pattern-list li {
-  min-height: 148px;
-  padding: 28px;
-  display: flex;
-  align-items: flex-end;
+  padding: 20px 18px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  text-wrap: balance;
   background: var(--uc-cream);
   color: var(--uc-pine-dark);
   font-family: var(--uc-serif);
@@ -474,6 +475,10 @@ p {
   margin-bottom: 24px;
 }
 
+.offer-box .offer-meta {
+  margin: 12px 0 0;
+}
+
 .price span {
   color: var(--uc-muted);
   font-size: 0.85rem;
@@ -644,8 +649,7 @@ p {
   }
 
   .pattern-list li {
-    min-height: 112px;
-    padding: 22px;
+    padding: 16px 20px;
   }
 
   .image-panel img,
@@ -663,7 +667,7 @@ p {
 
   .offer-panel,
   .offer-box {
-    padding: 28px;
+    padding: 20px;
   }
 
   .price strong {

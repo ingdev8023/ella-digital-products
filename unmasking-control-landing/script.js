@@ -14,15 +14,3 @@ document.querySelectorAll("[data-accordion] details").forEach((item) => {
     });
   });
 });
-
-// Replace this placeholder with the final Systeme.io checkout URL before publishing.
-document.querySelectorAll("[data-checkout-link]").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const href = link.getAttribute("href");
-
-    if (!href || href === "#checkout" || href === "YOUR_SYSTEME_CHECKOUT_URL") {
-      event.preventDefault();
-      alert("Before publishing, replace YOUR_SYSTEME_CHECKOUT_URL with your secure Systeme.io checkout URL.");
-    }
-  });
-});
