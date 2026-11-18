@@ -13,7 +13,7 @@ if (site && (site.protocol !== "https:" || site.href !== site.origin + "/")) {
 }
 
 await mkdir(output, { recursive: true });
-for (const file of ["assets", "styles.css", "script.js", "meta-pixel.js", "favicon.svg"]) {
+for (const file of ["assets", "styles.css", "script.js", "favicon.svg"]) {
   await cp(path.join(source, file), path.join(output, file), { recursive: true });
 }
 let html = await readFile(path.join(source, "index.html"), "utf8");
