@@ -52,12 +52,13 @@ async function checkExit(browser, input, javaScriptEnabled) {
     const faq = page.getByText("What does Quick exit do?", { exact: true });
     await faq.focus();
     await page.keyboard.press("Enter");
-    assert(await page.getByText("Quick exit opens the National Weather Service", { exact: false }).isVisible());
+    assert(await page.locator("[data-accordion]").getByText("Quick exit opens the National Weather Service", { exact: false }).isVisible());
     // Settle responsive image requests from scrolling the FAQ before measuring exit traffic.
-    await page.evaluate(() => Promise.all(Array.from(document.images, image => {
-      image.loading = "eager";
-      return image.decode();
-    })));
+    await page.evaluate(() => {
+      for (const image of document.images) image.loading = "eager";
+    });
+    await page.waitForLoadState("networkidle");
+    await page.evaluate(() => Promise.all(Array.from(document.images, image => image.decode())));
     const requests = [];
     page.on("request", req => requests.push(req.url()));
     if (input === "keyboard") {

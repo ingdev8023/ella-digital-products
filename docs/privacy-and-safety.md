@@ -6,4 +6,6 @@ The document uses a no-referrer policy and the exit link uses noreferrer. The ex
 
 Public copy uses the publisher and approved role-level description. Obtain owner approval before adding biographical details. Inspect the seller profile and actual receipt reply-to identity before launch. Readers can contact the seller by replying to a receipt. Do not ask readers to submit relationship histories through the landing page.
 
+The footer disclosure explains host request processing, checkout records, and where to read each provider's policy. The [analytics plan](analytics-plan.md) defines dashboard scope, collection limits, retention questions, and the checks required before enabling a paid service.
+
 Sources for [US support](https://www.thehotline.org/get-help/), [digital safety](https://www.thehotline.org/plan-for-safety/internet-safety/), and [Gumroad receipts](https://gumroad.com/help/article/204-get-to-know-your-gumroad-receipt).

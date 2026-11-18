@@ -615,6 +615,18 @@ p {
   margin: 5px 0;
 }
 
+.privacy-disclosure {
+  max-width: 68ch;
+  font-size: 0.9rem;
+}
+
+.privacy-disclosure summary {
+  width: fit-content;
+  padding-block: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .mobile-cta {
   display: none;
 }

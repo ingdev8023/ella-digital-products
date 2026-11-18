@@ -56,3 +56,11 @@ Updated the page, CSS, README, privacy notes, and browser regression test. Added
 Remaining checks require the live Netlify site and owner-controlled Search Console property. Verify the served preview header, production canonical, sitemap, and social image after authorized deployment. Google's live rich-result and indexing status and real-user performance remain unmeasured.
 
 Owner requested final photo sizing and sharpness adjustments, the local commit, and Milestone 4. Chrome measured both photos at 360, 390, 760, 768, 1024, and 1440 CSS pixels with device scale factors from 1 to 3. At 390 pixels both rendered 180 pixels tall. A 1440-pixel desktop loaded the 1080-pixel exports at 1x and the original-resolution exports at 3x. The earlier Lighthouse scores predate these final photo changes.
+
+## 4. Analytics and privacy
+
+Milestone 3 checkpoint: `a302626`. Milestone 4 is ready for owner review. The [analytics plan](analytics-plan.md) compares Netlify and Plausible, selects Netlify host-side reporting with Gumroad sales, and specifies collection boundaries, metric definitions and launch verification. Checkout click-through and site-attributed purchase conversion remain unmeasured. The actual team plan, account settings, billing, dashboard history, and live collection still need verification.
+
+Added a native footer disclosure, provider links, and supporting styles. No visitor analytics script or paid service was installed. Updated the exit regression test to scope its FAQ assertion and settle lazy-loaded image requests from viewport changes before measuring exit traffic.
+
+The production build succeeded with `node scripts/build-site.mjs` and a reserved test origin. Chrome opened the disclosure by keyboard with JavaScript enabled and disabled. Both runs showed zero external requests before checkout, empty cookie and web storage, and direct same-tab checkout navigation with external requests intercepted. The destination was a test response. `node tests/milestone-2.cjs` passed keyboard, mouse, emulated touch, and script-disabled exit scenarios. These local checks do not measure Netlify's host logs or Gumroad transactions.
