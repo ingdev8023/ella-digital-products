@@ -112,6 +112,20 @@ img {
   text-decoration: none;
 }
 
+.header-nav .quick-exit {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+html {
+  scroll-padding-block: 84px;
+}
+
 .header-cta,
 .text-link {
   color: var(--uc-pine);
@@ -569,7 +583,7 @@ p {
 }
 
 @media (max-width: 920px) {
-  .header-nav a:not(.header-cta) {
+  .header-nav a[href="#inside"] {
     display: none;
   }
 
@@ -599,6 +613,10 @@ p {
 }
 
 @media (max-width: 760px) {
+  .header-nav .header-cta {
+    display: none;
+  }
+
   body {
     font-size: 15px;
   }

@@ -1,5 +1,12 @@
 const year = document.getElementById("year");
 
+const quickExit = document.querySelector(".quick-exit");
+quickExit.addEventListener("click", (event) => {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  window.location.replace(quickExit.href);
+});
+
 if (year) {
   year.textContent = new Date().getFullYear();
 }
