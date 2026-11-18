@@ -1,15 +1,37 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/dm-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("assets/fonts/libre-baskerville.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("assets/fonts/libre-baskerville-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --uc-ink: #24332f;
   --uc-pine: #2f5148;
   --uc-pine-dark: #203a33;
   --uc-cream: #f8f5ed;
   --uc-paper: #fffdf8;
-  --uc-clay: #b76e5d;
+  --uc-clay: #8a4b3c;
   --uc-blush: #ead7d1;
   --uc-sage: #9fac90;
   --uc-charcoal: #1c2523;
   --uc-line: #dcd8cc;
-  --uc-muted: #68716e;
+  --uc-muted: #505954;
   --uc-shadow: 0 22px 60px rgba(36, 51, 47, 0.13);
   --uc-radius: 8px;
   --uc-serif: "Libre Baskerville", Georgia, serif;
@@ -149,9 +171,19 @@ html {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(248, 245, 237, 0.98) 0%, rgba(248, 245, 237, 0.88) 34%, rgba(248, 245, 237, 0.32) 66%, rgba(248, 245, 237, 0.1) 100%),
-    url("https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png") center / cover no-repeat;
+}
+
+.hero-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(248, 245, 237, 0.98) 0%, rgba(248, 245, 237, 0.88) 34%, rgba(248, 245, 237, 0.32) 66%, rgba(248, 245, 237, 0.1) 100%);
 }
 
 .hero-content {
@@ -367,9 +399,14 @@ p {
   box-shadow: var(--uc-shadow);
 }
 
+.image-panel picture {
+  display: block;
+}
+
 .image-panel img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
@@ -591,10 +628,12 @@ p {
     min-height: auto;
   }
 
-  .hero-backdrop {
-    background:
-      linear-gradient(180deg, rgba(248, 245, 237, 0.98) 0%, rgba(248, 245, 237, 0.92) 50%, rgba(248, 245, 237, 0.35) 100%),
-      url("https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png") 58% center / cover no-repeat;
+  .hero-backdrop img {
+    object-position: 58% center;
+  }
+
+  .hero-backdrop::after {
+    background: linear-gradient(180deg, rgba(248, 245, 237, 0.98) 0%, rgba(248, 245, 237, 0.92) 50%, rgba(248, 245, 237, 0.35) 100%);
   }
 
   .hero-content {
@@ -672,7 +711,8 @@ p {
 
   .image-panel img,
   .image-panel-soft img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 2 / 1;
+    max-height: 220px;
   }
 
   .included-list article {

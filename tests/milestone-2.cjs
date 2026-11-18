@@ -22,6 +22,9 @@ async function checkExit(browser, input, javaScriptEnabled) {
     await page.route(/127\.0\.0\.1:4173\/(index\.html|styles\.css|script\.js)$/, route =>
       route.fulfill({ path: path.join(root, path.basename(route.request().url())) })
     );
+    await page.route(/^http:\/\/127\.0\.0\.1:4173\/(assets\/(fonts\/)?[\w-]+\.(webp|woff2)|favicon\.svg)$/, route =>
+      route.fulfill({ path: path.join(root, new URL(route.request().url()).pathname.slice(1)) })
+    );
     let referrer;
     await page.route(weather, route => {
       referrer = route.request().headers().referer;
@@ -50,6 +53,11 @@ async function checkExit(browser, input, javaScriptEnabled) {
     await faq.focus();
     await page.keyboard.press("Enter");
     assert(await page.getByText("Quick exit opens the National Weather Service", { exact: false }).isVisible());
+    // Settle responsive image requests from scrolling the FAQ before measuring exit traffic.
+    await page.evaluate(() => Promise.all(Array.from(document.images, image => {
+      image.loading = "eager";
+      return image.decode();
+    })));
     const requests = [];
     page.on("request", req => requests.push(req.url()));
     if (input === "keyboard") {

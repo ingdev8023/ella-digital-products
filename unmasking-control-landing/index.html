@@ -6,15 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Unmasking Control is a psychology-informed educational toolkit for recognizing controlling relationship patterns with clarity and care."
+      content="Explore an eight-chapter guide to recognizing coercive control, gaslighting, and relationship patterns. Includes six printable tools for reflection and safety planning."
     />
-    <title>Unmasking Control | Relationship clarity toolkit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <title>Unmasking Control | A Guide to Recognizing Coercive Control</title>
+    <meta name="robots" content="noindex" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mental Health For You" />
+    <meta property="og:title" content="Unmasking Control | A Guide to Recognizing Coercive Control" />
+    <meta property="og:description" content="An eight-chapter ebook and six printable tools to help you notice patterns and reflect at your own pace." />
+    <meta property="og:image" content="assets/social-preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A closed workbook, notebook, and ceramic cup on a sunlit desk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/libre-baskerville.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Unmasking Control: A Clinical Psychologist’s Guide to Clarity & Autonomy (+ 6 Tools)",
+        "description": "An eight-chapter digital guide and six companion PDFs for reflection, documentation, and safety planning.",
+        "image": "assets/social-preview.jpg",
+        "brand": { "@type": "Brand", "name": "Mental Health For You" },
+        "offers": {
+          "@type": "Offer",
+          "price": "29.00",
+          "priceCurrency": "USD",
+          "url": "https://mentalhealthforyou.gumroad.com/l/unmasking-control?wanted=true"
+        }
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -31,7 +53,10 @@
 
       <main id="main">
         <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-backdrop" aria-hidden="true"></div>
+          <picture class="hero-backdrop" aria-hidden="true">
+            <source media="(max-width: 920px)" srcset="assets/hero-workbook-desk-900.webp" />
+            <img src="assets/hero-workbook-desk-1672.webp" alt="" width="1672" height="941" fetchpriority="high" />
+          </picture>
           <div class="shell hero-content">
             <h1 id="hero-title">Unmasking Control</h1>
             <p class="hero-statement">For the moment when something feels wrong, but you cannot quite explain why.</p>
@@ -83,10 +108,16 @@
         <section class="section toolkit" id="inside">
           <div class="shell feature-grid">
             <figure class="image-panel">
-              <img
-                src="https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/toolkit-worksheets.png"
-                alt="Printable psychology toolkit worksheets arranged on a desk with a pen"
-              />
+              <picture>
+                <source media="(max-width: 760px)"
+                  srcset="assets/toolkit-worksheets-600.webp 600w, assets/toolkit-worksheets-1080.webp 1080w, assets/toolkit-worksheets-1448.webp 1448w"
+                  sizes="(max-width: 390px) calc(100vw - 30px), min(620px, 100vw - 36px)" />
+                <img src="assets/toolkit-worksheets-1080.webp"
+                  srcset="assets/toolkit-worksheets-1080.webp 1080w, assets/toolkit-worksheets-1448.webp 1448w"
+                  sizes="(max-width: 920px) calc(100vw - 48px), 540px"
+                  width="1448" height="1086" loading="lazy" decoding="async"
+                  alt="Printable psychology toolkit worksheets arranged on a desk with a pen" />
+              </picture>
             </figure>
             <div>
               <p class="eyebrow">What you receive</p>
@@ -142,10 +173,16 @@
               <p class="muted">These are educational tools, not treatment, crisis support, or a substitute for professional care.</p>
             </div>
             <figure class="image-panel image-panel-soft">
-              <img
-                src="https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/dual-anchor-method.png"
-                alt="Two calm tabletop clusters representing body safety and mental clarity"
-              />
+              <picture>
+                <source media="(max-width: 760px)"
+                  srcset="assets/dual-anchor-method-600.webp 600w, assets/dual-anchor-method-1080.webp 1080w, assets/dual-anchor-method-1536.webp 1536w"
+                  sizes="(max-width: 390px) calc(100vw - 30px), min(620px, 100vw - 36px)" />
+                <img src="assets/dual-anchor-method-1080.webp"
+                  srcset="assets/dual-anchor-method-1080.webp 1080w, assets/dual-anchor-method-1536.webp 1536w"
+                  sizes="(max-width: 920px) calc(100vw - 48px), 540px"
+                  width="1536" height="1024" loading="lazy" decoding="async"
+                  alt="Two calm tabletop clusters representing body safety and mental clarity" />
+              </picture>
             </figure>
           </div>
         </section>

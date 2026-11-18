@@ -37,3 +37,22 @@ Review the local landing page and the diff against `a5dd5e9`. The seller's publi
 Owner review approved the remaining Milestone 2 work and supplied final wording for the hero, toolkit overview, and FAQ introduction. The US support paragraph and both contact links now appear in the footer.
 
 Milestone 2 approved with the final two-paragraph lede. The owner authorized the local commit and Milestone 3.
+
+## 3. Search metadata, indexing, and performance
+
+Milestone 2 checkpoint: `315015a`. Milestone 3 is ready for review. The owner selected Netlify's primary address. The exact host is supplied during the build. The local Netlify configuration prepares the static output; the live service has not been changed.
+
+### Changes
+
+Updated the page, CSS, README, privacy notes, and browser regression test. Added the favicon, robots file, optimized images, local fonts and licenses, static build script, output ignore rule, Netlify build configuration, and SEO strategy. Archived six originals under `artwork/originals/`. The build emits deploy-specific canonical and social URLs, structured image URL, sitemap, and indexing rules.
+
+### Verification
+
+- `node scripts/build-site.mjs` with a reserved test origin and production context produced a parseable sitemap, matching canonical, absolute share card, and indexable page. A subsequent preview build emitted noindex HTML and response header and removed the production sitemap. A dummy Search Console token appeared only in the production build.
+- Chrome verified the Product and Offer JSON, visible price, currency, and all five checkout links. At 360, 390, 768, 1024, and 1440 CSS pixels the page fit horizontally, the correct hero variant loaded, all three photos decoded, and the local fonts loaded.
+- `node tests/milestone-2.cjs` passed all four exit scenarios with the new local assets. The test waits for image decoding before measuring navigation traffic.
+- Pillow inspection confirmed the seven published images contain no EXIF or XMP metadata. A mobile Lighthouse run scored 99 performance, 100 accessibility, and 100 SEO. The [SEO strategy](seo-strategy.md) records conditions, limitations, and the reproduction command.
+
+Remaining checks require the live Netlify site and owner-controlled Search Console property. Verify the served preview header, production canonical, sitemap, and social image after authorized deployment. Google's live rich-result and indexing status and real-user performance remain unmeasured.
+
+Owner requested final photo sizing and sharpness adjustments, the local commit, and Milestone 4. Chrome measured both photos at 360, 390, 760, 768, 1024, and 1440 CSS pixels with device scale factors from 1 to 3. At 390 pixels both rendered 180 pixels tall. A 1440-pixel desktop loaded the 1080-pixel exports at 1x and the original-resolution exports at 3x. The earlier Lighthouse scores predate these final photo changes.

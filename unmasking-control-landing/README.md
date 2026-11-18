@@ -18,17 +18,11 @@ http://127.0.0.1:4173/index.html
 
 Opening `index.html` directly also works for basic review, but a local server is better for browser QA.
 
-## V2 assets
+## Static publishing
 
-Current project assets and public URLs:
+Netlify runs `node scripts/build-site.mjs` from the repository root and publishes `dist/`. It supplies the primary site address in `URL` and the deploy type in `CONTEXT`. The build writes absolute metadata and a production sitemap. Deploy previews receive indexing exclusions. Local source review works directly from this folder.
 
-- Hero: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png`
-- Toolkit: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/toolkit-worksheets.png`
-- Dual-Anchor Method: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/dual-anchor-method.png`
-- Local backups remain in `assets/hero-workbook-desk.png`, `assets/toolkit-worksheets.png`, and `assets/dual-anchor-method.png`.
-- `assets/privacy-desk.png` - generated but not used in the current page
-
-The old `hook.png` and `problem.png` files remain in `assets/` but are not used in V2.
+Responsive WebP photos, a JPEG social image, and licensed WOFF2 fonts are served from `assets/`. The six original PNGs are archived in `artwork/originals/` at the repository root. See the [SEO and verification notes](../docs/seo-strategy.md).
 
 ## Checkout and delivery
 
