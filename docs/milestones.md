@@ -72,3 +72,18 @@ The owner approved Milestone 4 and its local commit `0a2d3d3`. Local launch prep
 The build now emits shared browser security headers with separate indexing rules for production and previews. Both contexts passed `node tests/launch.cjs` against served artifacts in Chrome. All four `node tests/milestone-2.cjs` exit scenarios passed. The real public checkout rendered the product name and $29. The Netlify target returned 404 on all four public checks. Seller-mode receipt, reply-to, seven-file delivery, live headers and real-device checks remain outstanding. Git attribution and the public seller bio need owner sign-off.
 
 See the [launch and rollback runbook](deployment.md) for verification commands and the owner-controlled steps. The root README and [architecture notes](architecture.md) describe the build and third-party boundaries.
+
+## Production closeout | November 18, 2026
+
+PR #1 merged the five milestone commits into GitHub main at `0b6a60d`. The owner published the Netlify site. Repository implementation and deployment are complete. The following results supersede the prelaunch 404 checks.
+
+| Production check | Result |
+| --- | --- |
+| Delivery and indexing | HTTP redirected to HTTPS with 301. Homepage, robots.txt, sitemap, favicon and share image returned 200. Canonical and sitemap point to the production homepage. No production noindex directive was observed. |
+| Browser security | CSP, nosniff, frame denial, no-referrer and Permissions Policy present. Netlify served HSTS with a one-year lifetime, includeSubDomains and preload. |
+| Buyer journey | Five purchase links matched the structured USD 29 offer. The offer button opened the real hosted checkout with the correct product and price. No payment was submitted. |
+| Layout and interaction | At 360, 390, 768, 1024 and 1440 CSS pixels the images decoded and the layout fit. Mobile purchase-bar visibility, internal anchors, keyboard skip link, FAQ, and footer disclosure passed. Quick Exit sent no referrer and Back skipped the landing page in the tested flow. |
+| External requests and console | No cross-origin requests occurred during the tested landing-page interactions before checkout. Chrome reported two inline CSP violations in an about:srcdoc frame alongside Netlify's injected public HUD. The purchase and exit flows worked under the existing policy. |
+| Production mobile lab audit | Lighthouse 12.8.2: performance 100, accessibility 100, SEO 92, LCP 1.5 seconds, CLS 0. The only SEO deduction was Lighthouse's inability to download robots.txt. Independent requests, including one with a crawler user agent, returned the allow rule and correct sitemap. Live Google indexing and field performance remain unverified. |
+
+Outstanding owner checks: authenticated Gumroad seller test receipt, public reply-to identity and seven-file delivery; physical-phone review; public bio and Git attribution sign-off; Search Console ownership/indexing and Netlify dashboard reporting. These remain open in the release record. The public checkout test cannot verify them.

@@ -2,7 +2,7 @@
 
 ## Release target
 
-The owner identified `https://unmaskingcontrol.netlify.app/` as the target. On November 17, 2026 it responded over HTTPS with Netlify 404s for the homepage, robots file, sitemap and share image. The response alone cannot establish which account owns the project or whether an earlier deploy exists.
+The owner published `https://unmaskingcontrol.netlify.app/` after merging PR #1. On November 18, 2026 the homepage, robots file, sitemap and share image returned HTTP 200. See the [production closeout](milestones.md#production-closeout--november-18-2026) for observed headers, browser results, and outstanding seller-account verification.
 
 In the Netlify project, verify the repository is `ingdev8023/ella-digital-products`, the production branch contains the reviewed commit, the base directory is the repository root, the command is `node scripts/build-site.mjs`, and the publish directory is `dist`. The existing root `netlify.toml` specifies the last two settings. Do not publish the repository root, archived source art, or a domain-free local build. Check that the Netlify primary URL matches the owner's address. A Netlify subdomain needs no registrar DNS change. For a later custom domain, add it to the same project, apply the DNS records Netlify shows for that domain, verify certificate issuance, select the primary address, then rebuild the canonical and sitemap.
 
