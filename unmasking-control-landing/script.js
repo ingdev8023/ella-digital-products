@@ -1,5 +1,12 @@
 const year = document.getElementById("year");
 
+const quickExit = document.querySelector(".quick-exit");
+quickExit.addEventListener("click", (event) => {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  window.location.replace(quickExit.href);
+});
+
 if (year) {
   year.textContent = new Date().getFullYear();
 }
@@ -12,17 +19,5 @@ document.querySelectorAll("[data-accordion] details").forEach((item) => {
     document.querySelectorAll("[data-accordion] details").forEach((other) => {
       if (other !== item) other.open = false;
     });
-  });
-});
-
-// Replace this placeholder with the final Systeme.io checkout URL before publishing.
-document.querySelectorAll("[data-checkout-link]").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const href = link.getAttribute("href");
-
-    if (!href || href === "#checkout" || href === "YOUR_SYSTEME_CHECKOUT_URL") {
-      event.preventDefault();
-      alert("Before publishing, replace YOUR_SYSTEME_CHECKOUT_URL with your secure Systeme.io checkout URL.");
-    }
   });
 });

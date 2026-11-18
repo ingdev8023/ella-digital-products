@@ -18,43 +18,14 @@ http://127.0.0.1:4173/index.html
 
 Opening `index.html` directly also works for basic review, but a local server is better for browser QA.
 
-## V2 assets
+## Static publishing
 
-Current project assets and public URLs:
+Netlify runs `node scripts/build-site.mjs` from the repository root and publishes `dist/`. It supplies the primary site address in `URL` and the deploy type in `CONTEXT`. The build writes absolute metadata and a production sitemap. Deploy previews receive indexing exclusions. Local source review works directly from this folder.
 
-- Hero: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/hero-workbook-desk.png`
-- Toolkit: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/toolkit-worksheets.png`
-- Dual-Anchor Method: `https://res.cloudinary.com/smivyk2c/image/upload/v1786994460/dual-anchor-method.png`
-- Local backups remain in `assets/hero-workbook-desk.png`, `assets/toolkit-worksheets.png`, and `assets/dual-anchor-method.png`.
-- `assets/privacy-desk.png` - generated but not used in the current page
+Responsive WebP photos, a JPEG social image, and licensed WOFF2 fonts are served from `assets/`. The six original PNGs are archived in `artwork/originals/` at the repository root. See the [SEO and verification notes](../docs/seo-strategy.md).
 
-The old `hook.png` and `problem.png` files remain in `assets/` but are not used in V2.
+## Checkout and delivery
 
-## Before publishing
+The header, hero, offer, final section, and mobile bar link directly to the [Gumroad checkout](https://mentalhealthforyou.gumroad.com/l/unmasking-control?wanted=true). These ordinary links work with JavaScript disabled. Gumroad handles payment, receipts, and delivery of seven PDFs. Buyers can reply to their receipt for product support.
 
-1. Replace every `YOUR_SYSTEME_CHECKOUT_URL` with the real secure Systeme.io checkout URL.
-2. Confirm the refund/guarantee language against the actual checkout terms.
-3. Confirm emergency, privacy, support, and professional-scope language with the final product owner.
-4. Do not add testimonials unless they are genuine, permissioned, and substantiated.
-5. Test on a real mobile device after publishing in Systeme.io.
-
-## Systeme.io placement
-
-Use the files in `systeme-io/` in numerical order:
-
-1. Paste `01-header-code.html` into page settings header code.
-2. Paste `02-page-body.html` into one raw HTML/code element.
-3. Paste `03-footer-code.html` into page settings footer code.
-
-The Systeme.io files already use the Cloudinary image URLs above. Replace only the checkout placeholder before publishing.
-
-## Production QA checklist
-
-- No broken image URLs
-- No console errors
-- No horizontal overflow at 360px, 390px, 768px, 1024px, and 1440px
-- Sticky mobile CTA does not cover critical content at rest
-- Keyboard focus is visible on links, CTAs, and FAQ summaries
-- FAQ works with native `details/summary`
-- Checkout placeholder is fully replaced
-- Systeme.io page matches the standalone source structure
+Before publishing, compare the visible price, contents, and refund condition with the live listing. Confirm the seller identity and receipt reply-to address in the seller account. See the [milestone record](../docs/milestones.md) for local QA and outstanding checks.
