@@ -18,6 +18,7 @@ for (const file of ["assets", "styles.css", "script.js", "favicon.svg"]) {
 }
 let html = await readFile(path.join(source, "index.html"), "utf8");
 let robots = await readFile(path.join(source, "robots.txt"), "utf8");
+let headers = (await readFile(path.join(source, "_headers"), "utf8")).trimEnd();
 if (site) {
   const tags = [
     `<link rel="canonical" href="${site.href}" />`,
@@ -36,10 +37,11 @@ if (production) {
   robots = robots.trimEnd() + `\nSitemap: ${site.href}sitemap.xml\n`;
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${site.href}</loc></url></urlset>\n`;
   await writeFile(path.join(output, "sitemap.xml"), sitemap);
-  await rm(path.join(output, "_headers"), { force: true });
+  headers += "\n  Strict-Transport-Security: max-age=31536000";
 } else {
   await rm(path.join(output, "sitemap.xml"), { force: true });
-  await writeFile(path.join(output, "_headers"), "/*\n  X-Robots-Tag: noindex\n");
+  headers += "\n  X-Robots-Tag: noindex";
 }
+await writeFile(path.join(output, "_headers"), headers + "\n");
 await writeFile(path.join(output, "index.html"), html);
 await writeFile(path.join(output, "robots.txt"), robots);

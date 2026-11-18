@@ -64,3 +64,11 @@ Milestone 3 checkpoint: `a302626`. Milestone 4 is ready for owner review. The [a
 Added a native footer disclosure, provider links, and supporting styles. No visitor analytics script or paid service was installed. Updated the exit regression test to scope its FAQ assertion and settle lazy-loaded image requests from viewport changes before measuring exit traffic.
 
 The production build succeeded with `node scripts/build-site.mjs` and a reserved test origin. Chrome opened the disclosure by keyboard with JavaScript enabled and disabled. Both runs showed zero external requests before checkout, empty cookie and web storage, and direct same-tab checkout navigation with external requests intercepted. The destination was a test response. `node tests/milestone-2.cjs` passed keyboard, mouse, emulated touch, and script-disabled exit scenarios. These local checks do not measure Netlify's host logs or Gumroad transactions.
+
+## 5. Launch preparation
+
+The owner approved Milestone 4 and its local commit `0a2d3d3`. Local launch preparation is ready for review. The owner supplied the Netlify target and confirmed the Gumroad product URL. The release has not been deployed.
+
+The build now emits shared browser security headers with separate indexing rules for production and previews. Both contexts passed `node tests/launch.cjs` against served artifacts in Chrome. All four `node tests/milestone-2.cjs` exit scenarios passed. The real public checkout rendered the product name and $29. The Netlify target returned 404 on all four public checks. Seller-mode receipt, reply-to, seven-file delivery, live headers and real-device checks remain outstanding. Git attribution and the public seller bio need owner sign-off.
+
+See the [launch and rollback runbook](deployment.md) for verification commands and the owner-controlled steps. The root README and [architecture notes](architecture.md) describe the build and third-party boundaries.
